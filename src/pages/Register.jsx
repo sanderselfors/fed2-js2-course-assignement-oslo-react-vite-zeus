@@ -1,5 +1,5 @@
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Link } from "@tanstack/react-router";
 
 function RegisterForm() {
   const [formData, setFormData] = useState({
@@ -9,39 +9,50 @@ function RegisterForm() {
   });
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: value,
-    });
+    }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
+  const navigateToHome = () => {
+    setTimeout(() => {
+      navigate({ to: "/login" });
+    }, 2000);
+  };
 
-    // Check if the email is from @noroff.no or @stud.noroff.no
-    if (!formData.email.endsWith("@noroff.no") && !formData.email.endsWith("@stud.noroff.no")) {
+  const handleRegistration = async () => {
+    setIsLoading(true);
+    setMessage("");
+
+    if (
+      !formData.email.endsWith("@noroff.no") &&
+      !formData.email.endsWith("@stud.noroff.no")
+    ) {
       setMessage("Email must be from @noroff.no or @stud.noroff.no");
       setIsLoading(false);
       return;
     }
 
     try {
-      const payload = JSON.stringify(formData);
-
-      const response = await fetch("https://api.noroff.dev/api/v1/social/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: payload,
-      });
+      const response = await fetch(
+        "https://api.noroff.dev/api/v1/social/auth/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.status === 201) {
-        setMessage("Registration successful!");
+        setMessage("Registration successful! Welcome aboard.");
+        navigateToHome();
       } else {
         setMessage("Registration failed. Please try again later.");
       }
@@ -55,9 +66,21 @@ function RegisterForm() {
   return (
     <div className="relative flex flex-col justify-center min-h-screen p-5 overflow-hidden">
       <div className="w-full max-w-xl p-5 m-auto bg-white border-2 border-blue-500 py-28 rounded-xl">
-        <h1 className="text-3xl font-normal text-center text-gray-700">Register</h1>
-        {message && <p className="text-center text-red-500">{message}</p>}
-        <form className="max-w-sm m-auto mt-6" onSubmit={handleSubmit}>
+        <h1 className="text-3xl font-normal text-center text-gray-700">
+          Register
+        </h1>
+        {message && (
+          <p
+            className={`text-center ${
+              message.includes("failed") || message.includes("Email")
+                ? "text-red-500"
+                : "text-green-500"
+            }`}
+          >
+            {message}
+          </p>
+        )}
+        <form className="max-w-sm m-auto mt-6">
           <div className="py-1 mb-2">
             <input
               type="text"
@@ -93,7 +116,8 @@ function RegisterForm() {
           </div>
           <div className="flex justify-center mt-6">
             <button
-              type="submit"
+              type="button"
+              onClick={handleRegistration}
               className="w-full px-4 py-2 tracking-wide text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-3xl hover:bg-blue-700 focus:outline-none focus:bg-blue-500"
               disabled={isLoading}
             >
@@ -103,7 +127,10 @@ function RegisterForm() {
         </form>
         <p className="mt-8 text-xs font-light text-center text-gray-700">
           Already have an account?{" "}
-          <Link to="/login" className="font-medium text-blue-500 hover:underline">
+          <Link
+            to="/login"
+            className="font-medium text-blue-500 hover:underline"
+          >
             Log in
           </Link>
         </p>
