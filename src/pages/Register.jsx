@@ -50,7 +50,11 @@ function RegisterForm() {
         }
       );
 
-      if (response.status === 201) {
+      if (response.ok) {
+        const data = await response.json();
+        if (data && data.access_token) {
+          localStorage.setItem("accessToken", data.access_token);
+        }
         setMessage("Registration successful! Welcome aboard.");
         navigateToHome();
       } else {
