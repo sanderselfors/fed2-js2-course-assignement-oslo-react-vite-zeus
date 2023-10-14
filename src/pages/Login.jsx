@@ -27,12 +27,16 @@ export default function LoginPage() {
 
       if (response.ok) {
         const data = await response.json();
-        if (data && data.access_token) {
-          localStorage.setItem("accessToken", data.access_token);
+        console.log("Response Data:", data);
+        
+        if (data && data.accessToken) {
+          localStorage.setItem("accessToken", data.accessToken);
+          localStorage.setItem("user_email", data.email);
+          localStorage.setItem("user_name", data.name);
         }
         setSuccess("Login successful. Redirecting to the homepage.");
         setTimeout(() => {
-          navigate({ to: "/" });
+          navigate({ to: "/Profile" });
         }, 2000);
       } else {
         setError("Invalid credentials. Please check your email and password.");

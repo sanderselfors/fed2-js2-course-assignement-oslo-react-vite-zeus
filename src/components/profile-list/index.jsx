@@ -9,7 +9,8 @@ function Profiles() {
 
   useEffect(() => {
     const apiUrl = 'https://api.noroff.dev/api/v1/social/profiles/';
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTI3MiwibmFtZSI6IktoYWRhciIsImVtYWlsIjoiS2hhZGFyQHN0dWQubm9yb2ZmLm5vIiwiYXZhdGFyIjpudWxsLCJiYW5uZXIiOm51bGwsImlhdCI6MTY5NjkzNDEwMH0.LBn5-HZyYjJT9RUFrid6F7NBvMSnNls-Bzx06FAQ_j0'; 
+    const token = localStorage.getItem("accessToken");
+
 
     fetch(apiUrl, {
       headers: {

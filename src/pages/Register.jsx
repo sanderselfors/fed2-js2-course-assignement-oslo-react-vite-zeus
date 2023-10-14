@@ -52,8 +52,8 @@ function RegisterForm() {
 
       if (response.ok) {
         const data = await response.json();
-        if (data && data.access_token) {
-          localStorage.setItem("accessToken", data.access_token);
+        if (data && data.accessToken) {
+          localStorage.setItem("accessToken", data.accessToken);
         }
         setMessage("Registration successful! Welcome aboard.");
         navigateToHome();
