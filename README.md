@@ -39,9 +39,21 @@ For the registration form, I incorporated a strict email validation process that
 Moving on to the login form, I ensured a smooth login experience by sending the user's credentials to the server for verification. If the login was successful, I stored the access token in the local storage for future use. Error handling was also a crucial part, and I made sure to display clear error messages to assist users in case of any issues.
 
 Furthermore, I paid special attention to responsive design, making the forms adaptable to various screen sizes for enhanced user interaction. Working alongside my fellow student, Ali and Espen, greatly contributed to my learning journey, making this project a significant milestone in my mastery of JavaScript, React, and web development.
+
 ### Home page - Ali
 
 ### Profile page – Espen Henriksen Snerten
+
+First off, I completely misunderstood the assignment, evidently I did not read the CA thoroughly enough, I spent most of my time on this project trying to get a profile list to work, I was also unfortunately without an internet connection for a day and a half, so really the creds go to Sander and Ali on this one.
+
+After I reread the CA my work truly began, I offered my help in debugging and quality of life improvements to the project, I wont list everything I did, because again the brunt of the work was done by my team members, I helped were necessary such as local storage and a nifty way to set a default profile image.
+
+The design for this project was frustrating, the data from the API was lackluster and stunted the creative process for me at least, I still don't like tailwind, but it was more palatable for me this time around.
+
+In conclusion, a fun project when I truly got around to help build it, my view for the project was broader initially and that reflects in the work, I had hoped to get more features implemented, and with time would have done so.
+
+I'm sorry to see the end of this particular team, both Ali and Sander are good dev's who I have enjoyed working with.
+  
 
 ## Authors
 
