@@ -9,6 +9,8 @@ export default function FetchPosts() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchInput, setSearchInput] = useState("");
+  const defaultAvatar = "/defaultprofilepic.png";
+
 
   useEffect(() => {
     const GetPosts = async () => {
@@ -124,7 +126,7 @@ export default function FetchPosts() {
                       />
                     ) : (
                       <img
-                        src="src/assets/defaultprofilepic.png"
+                        src={defaultAvatar}
                         alt=""
                         className="w-10 h-10 rounded-full bg-gray-50"
                       />

@@ -4,7 +4,7 @@ function Profile() {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const defaultAvatar = "src/assets/defaultprofilepic.png";
+  const defaultAvatar = "/defaultprofilepic.png";
   const defaultString = "the API does not provide the data";
   const user_name = localStorage.getItem("user_name");
   const token = localStorage.getItem("accessToken");

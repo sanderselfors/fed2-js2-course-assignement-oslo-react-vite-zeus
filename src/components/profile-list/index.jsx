@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "@tanstack/react-router";
 
-const defaultAvatar = "src/assets/defaultprofilepic.png";
+const defaultAvatar = "/defaultprofilepic.png";
 
 function Profiles() {
   const [data, setData] = useState([]);
