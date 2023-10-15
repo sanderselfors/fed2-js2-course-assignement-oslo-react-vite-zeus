@@ -77,7 +77,7 @@ export default function ManipulatePost({ id = "no id" }) {
       {isEditing ? (
         <>
           <form
-            className="flex gap-2"
+            className="flex flex-col gap-2"
             onSubmit={(event) => editPost(event, setIsEditing)}
           >
             <input type="hidden" name="postId" id="postId" value={id} />
