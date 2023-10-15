@@ -38,12 +38,6 @@ export default function Navigation() {
                 Profiles
               </Link>
               <Link
-                to="/posts"
-                className="text-lg text-gray-600 hover:text-blue-500"
-              >
-                Posts
-              </Link>
-              <Link
                 to="/login"
                 className="text-lg text-gray-600 hover:text-blue-500"
               >
@@ -118,13 +112,7 @@ export default function Navigation() {
         >
           Profiles
         </Link>
-        <Link
-          to="/posts"
-          className="block p-2 my-2 text-lg text-gray-600 hover:text-blue-500"
-          onClick={toggleMobileMenu}
-        >
-          Posts
-        </Link>
+
         <Link
           to="/login"
           className="block p-2 my-2 text-lg text-gray-600 hover:text-blue-500"
@@ -133,12 +121,12 @@ export default function Navigation() {
           Login
         </Link>
         <Link
-                to="/"
-                className="block p-2 my-2 text-lg text-gray-600 hover:text-blue-500"
-                onClick={handleLogout}
-              >
-                Logout
-              </Link>
+          to="/"
+          className="block p-2 my-2 text-lg text-gray-600 hover:text-blue-500"
+          onClick={handleLogout}
+        >
+          Logout
+        </Link>
       </div>
     </>
   );
