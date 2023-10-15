@@ -8,6 +8,11 @@ export default function Navigation() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleLogout = () => {
+    localStorage.clear();
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <>
       <nav className="bg-white border-2 border-white border-b-blue-500">
@@ -20,12 +25,6 @@ export default function Navigation() {
             </div>
 
             <div className="hidden space-x-10 lg:flex">
-              <Link
-                to="/"
-                className="text-lg text-gray-600 hover:text-blue-500"
-              >
-                Home
-              </Link>
               <Link
                 to="/profile"
                 className="text-lg text-gray-600 hover:text-blue-500"
@@ -50,11 +49,13 @@ export default function Navigation() {
               >
                 Login
               </Link>
-              <input
-                type="text"
-                placeholder="Search"
-                className="px-2 font-light border-2 border-blue-500 rounded-3xl"
-              />
+              <Link
+                to="/"
+                className="text-lg text-gray-600 hover:text-blue-500"
+                onClick={handleLogout}
+              >
+                Logout
+              </Link>
             </div>
 
             <div className="lg:hidden">
@@ -104,13 +105,6 @@ export default function Navigation() {
         }`}
       >
         <Link
-          to="/"
-          className="block p-2 text-lg text-gray-600 hover:text-blue-500"
-          onClick={toggleMobileMenu}
-        >
-          Home
-        </Link>
-        <Link
           to="/profile"
           className="block p-2 my-2 text-lg text-gray-600 hover:text-blue-500"
           onClick={toggleMobileMenu}
@@ -138,11 +132,13 @@ export default function Navigation() {
         >
           Login
         </Link>
-        <input
-          type="text"
-          placeholder="Search"
-          className="px-2 py-1 border border-blue-500 rounded-3xl"
-        />
+        <Link
+                to="/"
+                className="block p-2 my-2 text-lg text-gray-600 hover:text-blue-500"
+                onClick={handleLogout}
+              >
+                Logout
+              </Link>
       </div>
     </>
   );

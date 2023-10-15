@@ -49,6 +49,9 @@ function Profile() {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-4 mx-auto bg-white max-w-7xl">
+      <h1 className="mb-12 text-2xl font-semibold tracking-wide text-black">
+        Noroff API Profile
+      </h1>
       {loading ? (
         <p>Loading...</p>
       ) : profile ? (

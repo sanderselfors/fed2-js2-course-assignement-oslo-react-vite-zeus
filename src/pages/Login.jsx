@@ -34,7 +34,7 @@ export default function LoginPage() {
           localStorage.setItem("user_email", data.email);
           localStorage.setItem("user_name", data.name);
         }
-        setSuccess("Login successful. Redirecting to the homepage.");
+        setSuccess("Login successful.");
         setTimeout(() => {
           navigate({ to: "/Profile" });
         }, 2000);

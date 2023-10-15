@@ -6,11 +6,18 @@ const defaultAvatar = "src/assets/defaultprofilepic.png";
 function Profiles() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    const apiUrl = 'https://api.noroff.dev/api/v1/social/profiles/';
     const token = localStorage.getItem("accessToken");
 
+    if (!token) {
+      setError("Access Token not found in local storage. Please log in.");
+      setLoading(false);
+      return; // Exit the function early
+    }
+
+    const apiUrl = 'https://api.noroff.dev/api/v1/social/profiles/';
 
     fetch(apiUrl, {
       headers: {
@@ -38,6 +45,9 @@ function Profiles() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 mx-auto bg-white max-w-7xl">
       <h1 className='mb-12 text-2xl font-semibold tracking-wide text-black'>Noroff API Profiles</h1>
+      {error && (
+        <p>{error}</p>
+      )}
       {loading ? (
         <p>Loading...</p>
       ) : (
