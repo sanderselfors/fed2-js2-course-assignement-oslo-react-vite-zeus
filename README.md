@@ -57,6 +57,9 @@ Idealy, we wanted to have the searchfield in the nav bar, but due to lack opf ti
 ##### Details page:
 Making the the details page was fairly easy, yet I found the consept to be unnecessary for the API that we are using. You can already view everything the endpoint has to offer with exception to tags. And if you wanted to you could make a comment section drop below the post aswell. In any case I have a working code that fetches the details in its own page with respect to posts ID.
 
+##### Conclution:
+Although annoying at times, I genuinly enjoyed working on this project. It was great practice and one no doubt I will open later to see how I did things. Yet I think 1 week for this assignment was not enough, I would've liked to add more features that I did not have time to do. Such as writing and viewing comments. One frustrtating thing with Noroff API, is that it's not possible (as far as I know) to change password. I had to use the default email and password to get a access token. in any case, I enjoyed this project and I enjoyed working with my team, we had good communication throughout and I believe both Espen and Sander to be competent devs. 
+
 
 ### Profile page – Espen Henriksen Snerten
 
