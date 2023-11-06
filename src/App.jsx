@@ -4,7 +4,6 @@ import Footer from "./components/navbar/footer";
 import "./App.css";
 
 function App() {
-  const title = "Tittel";
   return (
     <>
       <header>

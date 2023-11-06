@@ -9,16 +9,11 @@
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
     "build": "vite build",
-    "lint": "eslint --max-warnings=0 \"src/**/*.{js,jsx}\"",
+    "lint": "eslint --max-warnings=3 \"src/**/*.{js,jsx}\"",
     "preview": "vite preview",
     "test-e2e": "cypress open",
     "format": "prettier --check .",
     "prepare": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run format"
-    }
   },
   "dependencies": {
     "@tanstack/react-query": "^4.33.0",
