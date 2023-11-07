@@ -22,13 +22,13 @@ export default function LoginPage() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ email, password }),
-        }
+        },
       );
 
       if (response.ok) {
         const data = await response.json();
         console.log("Response Data:", data);
-        
+
         if (data && data.accessToken) {
           localStorage.setItem("accessToken", data.accessToken);
           localStorage.setItem("user_email", data.email);
@@ -57,7 +57,7 @@ export default function LoginPage() {
             Login
           </h1>
           {error && (
-            <div className="mt-2 text-center text-red-600">{error}</div>
+            <div className="error mt-2 text-center text-red-600">{error}</div>
           )}
           {success && (
             <div className="mt-2 text-center text-green-600">{success}</div>
@@ -67,7 +67,7 @@ export default function LoginPage() {
               <input
                 type="email"
                 placeholder="Email"
-                className="block w-full px-4 py-2 mt-2 text-blue-500 bg-white border rounded-md focus:border-blue-500 focus:ring-blue-500 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="email block w-full px-4 py-2 mt-2 text-blue-500 bg-white border rounded-md focus:border-blue-500 focus:ring-blue-500 focus:outline-none focus:ring focus:ring-opacity-40"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -77,7 +77,7 @@ export default function LoginPage() {
               <input
                 type="password"
                 placeholder="Password"
-                className="block w-full px-4 py-2 mt-2 text-blue-500 bg-white border rounded-md focus:border-blue-500 focus:ring-blue-500 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="password block w-full px-4 py-2 mt-2 text-blue-500 bg-white border rounded-md focus:border-blue-500 focus:ring-blue-500 focus:outline-none focus:ring focus:ring-opacity-40"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
