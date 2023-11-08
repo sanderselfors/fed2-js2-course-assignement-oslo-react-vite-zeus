@@ -9,7 +9,7 @@ describe("Synapse social testing", () => {
     const password = "fjonoerbono";
     cy.get(".email").type(`${email}`);
     cy.get(".password").type(`${password}{enter}`);
-    cy.get("h3").should("have.text", "fj");
+    cy.get("h3").should("have.text", "fjono");
   });
 
   it("cannot submit the login form with invalid credentials and is shown a message", () => {
