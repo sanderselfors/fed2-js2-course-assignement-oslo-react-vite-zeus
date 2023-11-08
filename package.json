@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "npm run test-e2e",
+    "vitest": "vitest",
+    "test": "npm run vitest && npm run test-e2e",
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
     "build": "vite build",
@@ -14,12 +15,11 @@
     "test-e2e": "cypress open",
     "format": "prettier --check ."
   },
-  
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint && npm run format"
     }
-  },  
+  },
   "dependencies": {
     "@tanstack/react-query": "^4.33.0",
     "@tanstack/react-router": "^0.0.1-beta.152",
@@ -47,5 +47,8 @@
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5",
     "vitest": "^0.34.6"
-  }
+  },
+  "bundleDependencies": [
+    "vitest"
+  ]
 }
