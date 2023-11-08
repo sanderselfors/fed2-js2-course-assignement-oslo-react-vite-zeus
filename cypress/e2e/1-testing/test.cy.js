@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 describe("Synapse social testing", () => {
   beforeEach(() => {
-    cy.visit("https://main--teamzeusjs2.netlify.app/");
+    cy.visit("http://localhost:5173/");
   });
 
   it("can login", () => {
