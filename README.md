@@ -3,6 +3,9 @@
 
 # React + Vite
 
+![GitHub Classroom Workflow](https://github.com/sanderselfors/fed2-js2-course-assignement-oslo-react-vite-zeus/actions/workflows/test.yml/badge.svg)
+![GitHub Classroom Workflow](https://github.com/sanderselfors/fed2-js2-course-assignement-oslo-react-vite-zeus/actions/workflows/unit-test.js.yml/badge.svg)
+
 ## Report
 
 In this course assignment the focus was to setup and write tests to ensure the application is working as expected.
