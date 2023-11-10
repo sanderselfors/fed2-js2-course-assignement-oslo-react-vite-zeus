@@ -8,25 +8,25 @@ on: pull_request
 
 jobs:
 
-  cypress-run:
+ cypress-run:
 
-    runs-on: ubuntu-22.04
+ runs-on: ubuntu-22.04
 
-    steps:
+ steps:
 
-      - name: Checkout
+ - name: Checkout
 
-        uses: actions/checkout@v4
+ uses: actions/checkout@v4
 
 
 
-      - name: Cypress run
+ - name: Cypress run
 
-        uses: cypress-io/github-action@v6
+ uses: cypress-io/github-action@v6
 
-        with:
+ with:
 
-          build: npm run build
+ build: npm run build
 
-          start: npm run dev
+ start: npm run dev
 
