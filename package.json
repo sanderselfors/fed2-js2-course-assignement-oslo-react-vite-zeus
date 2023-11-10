@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test:unit": "vitest --root src/",
     "vitest": "vitest",
     "test": "npm run vitest && npm run test-e2e",
     "test:ui": "vitest --ui",
@@ -27,6 +28,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.2",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.2.15",
