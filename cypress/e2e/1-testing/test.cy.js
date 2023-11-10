@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /// <reference types="cypress" />
 describe("Synapse social testing", () => {
   beforeEach(() => {
