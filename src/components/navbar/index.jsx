@@ -54,7 +54,7 @@ export default function Navigation() {
 
             <div className="lg:hidden">
               <button
-                className="text-gray-600 hover:text-blue-500"
+                className="text-gray-600 menubutton hover:text-blue-500"
                 onClick={toggleMobileMenu}
               >
                 {isMobileMenuOpen ? (
@@ -122,7 +122,7 @@ export default function Navigation() {
         </Link>
         <Link
           to="/"
-          className="block p-2 my-2 text-lg text-gray-600 hover:text-blue-500"
+          className="block p-2 my-2 text-lg text-gray-600 logout hover:text-blue-500"
           onClick={handleLogout}
         >
           Logout

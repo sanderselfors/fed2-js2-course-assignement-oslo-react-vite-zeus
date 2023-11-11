@@ -67,7 +67,7 @@ export default function LoginPage() {
               <input
                 type="email"
                 placeholder="Email"
-                className="block w-full px-4 py-2 mt-2 text-blue-500 bg-white border rounded-md focus:border-blue-500 focus:ring-blue-500 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-blue-500 bg-white border rounded-md email focus:border-blue-500 focus:ring-blue-500 focus:outline-none focus:ring focus:ring-opacity-40"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -77,7 +77,7 @@ export default function LoginPage() {
               <input
                 type="password"
                 placeholder="Password"
-                className="block w-full px-4 py-2 mt-2 text-blue-500 bg-white border rounded-md focus:border-blue-500 focus:ring-blue-500 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-blue-500 bg-white border rounded-md password focus:border-blue-500 focus:ring-blue-500 focus:outline-none focus:ring focus:ring-opacity-40"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -86,7 +86,7 @@ export default function LoginPage() {
             <div className="flex justify-center mt-6">
               <button
                 type="submit"
-                className="w-full px-4 py-2 tracking-wide text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-3xl hover:bg-blue-700 focus:outline-none focus:bg-blue-500"
+                className="w-full px-4 py-2 tracking-wide text-center text-white transition-colors duration-200 transform bg-blue-500 error rounded-3xl hover:bg-blue-700 focus:outline-none focus:bg-blue-500"
                 disabled={isLoading}
               >
                 {isLoading ? "Logging in..." : "Log in"}
